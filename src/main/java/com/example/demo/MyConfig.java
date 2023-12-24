@@ -3,7 +3,7 @@ package com.example.demo;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-@ConfigurationProperties("config")
+@ConfigurationProperties()
 @Configuration
 public class MyConfig {
 
@@ -14,7 +14,8 @@ public class MyConfig {
   }
 
   public void setMessage(String newMessage) {
-    System.out.println("Old value=%s, New value=%s".formatted(this.message, newMessage));
+    System.out.println(
+        "------------------------ Old value=%s, New value=%s".formatted(this.message, newMessage));
     this.message = newMessage;
   }
 }
